@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, DateTimePickerDelegate {
     
+    var picker: DateTimePicker!
+    
     @IBAction func showDateTimePicker(sender: AnyObject) {
         let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
         let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
-        let picker = DateTimePicker.create(minimumDate: min, maximumDate: max)
+        picker = DateTimePicker.create(minimumDate: min, maximumDate: max)
         
         // customize your picker
 //        picker.timeInterval = DateTimePicker.MinuteInterval.thirty

@@ -194,7 +194,7 @@ public protocol DateTimePickerDelegate {
     private var separatorTopView: UIView!
     private var separatorBottomView: UIView!
     
-    private var modalCloseHandler: (() -> Void)?
+    internal var modalCloseHandler: (() -> Void)?
     
     internal var minimumDate: Date!
     internal var maximumDate: Date!
