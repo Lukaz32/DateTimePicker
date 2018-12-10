@@ -217,6 +217,23 @@ public protocol DateTimePickerDelegate {
         return dateTimePicker
     }
     
+    init() {
+        super.init(frame: .zero)
+        modalCloseHandler = {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.8, options: .curveLinear, animations: {
+                // animate to hide pickerView
+                self.layoutIfNeeded()
+            }, completion: { (completed) in
+                self.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
+                
+            })
+        };
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     @objc open func show() {
         
